@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondDegreeCalc", "SecondDegreeCalc\SecondDegreeCalc.csproj", "{84390B9D-6330-4F89-9998-5ADF786327D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84390B9D-6330-4F89-9998-5ADF786327D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84390B9D-6330-4F89-9998-5ADF786327D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84390B9D-6330-4F89-9998-5ADF786327D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84390B9D-6330-4F89-9998-5ADF786327D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92319C0E-F8CD-4BA3-BBD2-A16398CC1CAA}
+	EndGlobalSection
+EndGlobal
