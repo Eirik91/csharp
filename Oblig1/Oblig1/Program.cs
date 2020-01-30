@@ -27,7 +27,7 @@ namespace Oblig1
                     ShowAllPeople(ListPeople);
                 }
                 var splitArray = input.Split(' ');
-                if (splitArray[0] == "vis" && Convert.ToInt32(splitArray[1]) >= ListPeople.Count)
+                if (splitArray[0] == "vis" && Convert.ToInt32(splitArray[1]) > ListPeople.Count)
                 {
                     Console.WriteLine($"Det er ingen med så høy id, den høyeste id'en er: {ListPeople.Count}");
                     continue;

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Oblig1
 {
@@ -17,30 +13,32 @@ namespace Oblig1
 
         public void Show() 
         {
+            Console.WriteLine();
             if (FirstName != null)
             {
-                Console.WriteLine("Firstname: " + FirstName);
+                Console.WriteLine("   Firstname: " + FirstName);
             }
             if (LastName != null)
             {
-                Console.WriteLine("Lastname: " + LastName);
+                Console.WriteLine("   Lastname: " + LastName);
             }
             if (BirthYear != 0) 
             {
-            Console.WriteLine("Birthyear: " + BirthYear);
+            Console.WriteLine("   Birthyear: " + BirthYear);
             }
             if (Mother != null)
             {
-                Console.WriteLine("Mother: " + Mother.FirstName);
+                Console.WriteLine("   Mother: " + Mother.FirstName);
             } 
             if (Father != null)
             {
-                Console.WriteLine("Father: " + Father.FirstName);
+                Console.WriteLine("   Father: " + Father.FirstName);
             }
             if (Id != 0)
             {
-                Console.WriteLine("Id: " + Id);
+                Console.WriteLine("   Id: " + Id);
             }
+            Console.WriteLine("   ------------------------");
         }
     }
 }
