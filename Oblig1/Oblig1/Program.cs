@@ -12,47 +12,70 @@ namespace Oblig1
         {
             Console.WriteLine("Velkommen til det kongelige slektstre!");
             var ListPeople = PersonList();
-          
+
             while (true)
             {
                 Console.Write("Skriv hva du ønsker å gjøre eller hjelp for hjelp: ");
-                
+
                 var input = Console.ReadLine();
                 if (input == "hjelp")
                 {
                     ShowHelpText();
+                    continue;
                 }
                 if (input == "liste")
                 {
                     ShowAllPeople(ListPeople);
+                    continue;
                 }
                 var splitArray = input.Split(' ');
-                if (splitArray[0] == "vis" && Convert.ToInt32(splitArray[1]) > ListPeople.Count)
+                int id = Convert.ToInt32(splitArray[1]);
+                if (splitArray[0] == "vis")
                 {
-                    Console.WriteLine($"Det er ingen med så høy id, den høyeste id'en er: {ListPeople.Count}");
-                    continue;
-                }
-                if (splitArray[0] == "vis" && Convert.ToInt32(splitArray[1]) == 0)
-                {
-                    Console.WriteLine("Det er ingen med id'en 0.");
-                    continue;
-                }
-                    if (splitArray[0] == "vis" && splitArray.Length > 1)
-                {
-                    var PersonId = Convert.ToInt32(splitArray[1]) - 1;
-                    ListPeople[PersonId].Show();
-                }
-                if (input != "hjelp" && input != "liste" && splitArray[0] != "vis") 
-                {
-                    Console.WriteLine("Du skrev noe feil. Skriv hjelp for kommandoer eller prøv på nytt");
-                }
+                    if (id > ListPeople.Count)
+                    {
+                        Console.WriteLine($"Det er ingen med så høy id, den høyeste id'en er: {ListPeople.Count}");
+                        continue;
+                    }
+                    if (id == 0)
+                    {
+                        Console.WriteLine("Det er ingen med id'en 0.");
+                        continue;
+                    }
+                    if (splitArray.Length > 1)
+                    {
+                        var PersonId = id - 1;
+                        ListPeople[PersonId].Show();
+                        foreach (var item in ListPeople)
+                        {
+                            if (item.Mother != null)
+                            {
+                                if (ListPeople[PersonId].FirstName == item.Mother.FirstName)
+                                {
+                                    item.Show();
+                                }
+                            }
+                            if (item.Father != null)
+                            {
+                                if (ListPeople[PersonId].FirstName == item.Father.FirstName)
+                                {
+                                    item.Show();
+                                }
+                            }
 
+                        }
+                    }
+                    if (input != "hjelp" && input != "liste" && splitArray[0] != "vis")
+                    {
+                        Console.WriteLine("Du skrev noe feil. Skriv hjelp for kommandoer eller prøv på nytt");
+                    }
+                }
             }
         }
 
         private static void ShowAllPeople(List<Person> listPeople)
         {
-            for (var i = 0; i < listPeople.Count; i++) 
+            for (var i = 0; i < listPeople.Count; i++)
             {
                 listPeople[i].Show();
             }
@@ -88,7 +111,7 @@ namespace Oblig1
             {
             sverreMagnus, ingridAlexandra, haakon, metteMarit, marius, harald, sonja, olav
             };
-        return list;
+            return list;
         }
     }
 }
